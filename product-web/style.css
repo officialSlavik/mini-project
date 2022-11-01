@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+* a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+  #menu {
+    list-style: none;
+    border: 0.1px solid red;
+    display: flex;
+    padding: 20px;
+    background: #10a1a6;
+    border-radius: 25px;
+    box-shadow: 5px 6px 6px 4px #4e5e82, 3px 3px 6px #4e5e82;
+  }
+  #menu li {
+    margin: auto;
+    font-size: 20px;
+    cursor: pointer;
+    background: #10a1a6;
+    color: #ffffff;
+  }
+  #menu li:hover {
+    transition: 0.1s;
+    border-bottom: 1px solid red;
+  }
+  body {
+    background: #000000;
+    color: white;
+  }
+  .container {
+    display: none;
+  }
+  #responsive-menu {
+    display: none;
+  }
+  #slider img {
+    border-radius: 100px;
+    width: 70%;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px 6px #c42020;
+  }
+}
+@media screen and (max-width: 500px) {
+  #menu {
+    display: none;
+  }
+  #responsive-menu {
+    list-style: none;
+    font-size: 20px;
+    display: none;
+    justify-content: center;
+  }
+  #responsive-menu li {
+    margin: 10px;
+    cursor: pointer;
+  }
+  #responsive-menu li:hover {
+    transition: 1s;
+    color: red;
+  }
+  .container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  #slider img {
+    border-radius: 100px;
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px 6px #c42020;
+  }
+}
+#product-asli {
+  margin-top: 300px;
+}
+
+#product img {
+  width: 200px;
+  height: 200px;
+}
+
+#product {
+  margin: 10px;
+  display: grid;
+  text-align: center;
+  border: 2px solid #0062ff;
+  width: 200px;
+  height: 340px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 6px #c42020;
+}
+
+#product button {
+  border: none;
+  outline: none;
+  background: green;
+  border-radius: 20px;
+  width: 70px;
+  height: 30px;
+  display: block;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+#product-asli {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+#card img {
+  width: 100px;
+  border-radius: 100%;
+}
+
+#card {
+  display: flex;
+  justify-content: space-around;
+  background: red;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 2px 3px 5px blue, 5px 2px 3px 5px green;
+}
+
+/*# sourceMappingURL=style.css.map */
