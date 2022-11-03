@@ -7,7 +7,8 @@ let ccard = document.getElementById('aliadd')
 let send = document.getElementById('send')
 let price = document.getElementById('price')
 let off = document.getElementById('off')
-
+let darsad = 0 ; 
+let t = document.getElementById('t')
 let cardadd=[
 ]
 let i = 0;
@@ -61,10 +62,9 @@ let product = [
     {name:"manitor" , price:4500,mojodi:4,pc:"p14.jpg" ,mm:4}
 ]
 
-product.forEach(function(index,number,k){
+product.forEach(function(index){
 
 
-console.log(k);
 
     let div = document.createElement('div')
 div.setAttribute('id' , 'product')
@@ -89,7 +89,6 @@ mojodi.style.color="green"
 button.addEventListener('click' , ()=>{
     index.mojodi--
     index.mm--
-    console.log(index.mm);
     mojodi.innerHTML="mojodi: "+index.mojodi
     if(index.mojodi == 0){
 
@@ -164,6 +163,9 @@ else{
 
  
 }
+
+
+
 })
 }
 
@@ -171,20 +173,30 @@ else{
 }) 
  send.innerHTML="price send:$500"
 send.style.color="red"
-// let oof = [
-//     {off:10,code:"abcdf"},
-//     {off:10,code:"abcd43643f"},
-//     {off:10,code:"abcd347sgda5f"},
-//     {off:10,code:"abcdfsdfv"},
-//     {off:10,code:"ert"},
-// ]
-// off.addEventListener('click' , ()=>{
-// let oi = Math.random()*5;
-// oi = Math.floor(oi)
-// if(i > 0){
-//   let hg = (i*oi) / 100; 
-//   alert(hg) 
-// }
-// alert(oof[oi].off)
 
-// })
+
+off.addEventListener('click' , ()=>{
+
+    let oof = [20,50,60,90,150,47]
+    let r = Math.random() * 5;
+    r = Math.floor(r);
+    if(darsad == 0){
+darsad = oof[r]
+
+
+    }
+    else{
+        alert('hast')
+    }
+    })
+    t.addEventListener('click' , ()=>{
+        if(darsad !=0){
+            let eamal = i - darsad
+            price.innerHTML ="price :" + eamal
+
+
+        }
+        else{
+            alert('please click click for off')
+        }
+    })
