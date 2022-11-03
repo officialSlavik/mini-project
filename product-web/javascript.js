@@ -6,6 +6,8 @@ let divAsli = document.getElementById('product-asli')
 let ccard = document.getElementById('aliadd')
 let send = document.getElementById('send')
 let price = document.getElementById('price')
+let off = document.getElementById('off')
+
 let cardadd=[
 ]
 let i = 0;
@@ -33,30 +35,36 @@ let sliderpc=[
     "p11.jpg",
     "p12.jpg",
     "p13.jpg",
+    "p14.jpg",
+    
   
 ]
 setInterval(function(){
 indexSlid++
 imgSlid.setAttribute('src' , sliderpc[indexSlid])
-if(indexSlid >10){
+if(indexSlid > 12){
     indexSlid=0
 }
 },1000)
 let product = [
-    {name:'apple 8' , price:1140, mojodi:7, pc:sliderpc[0]},
-    {name:'nokia' , price:900 , mojodi:5, pc:sliderpc[1]},
-    {name:'suny' , price:800 , mojodi:6, pc:sliderpc[2]},
-    {name:'samsung A12' , price:500 , mojodi:4, pc:sliderpc[3]},
-    {name:'samsung' , price:100 , mojodi:0, pc:sliderpc[4]},
-    {name:'xiomi pro' , price:250 , mojodi:2, pc:sliderpc[5]},
-    {name:'xiomi' , price:900 , mojodi:0, pc:sliderpc[6]},
-    {name:'apple pro u' , price:5000 , mojodi:0, pc:sliderpc[7]},
-    {name:'apple pro 7' , price:6000 , mojodi:3, pc:sliderpc[8]},
-    {name:'apple pro 10' , price:12000 , mojodi:1, pc:sliderpc[9]},
-    {name:'apple pro 11' , price:902 , mojodi:5, pc:sliderpc[10]},
+    {name:'apple 8' , price:1140, mojodi:7, pc:sliderpc[0],mm:7},
+    {name:'nokia' , price:900 , mojodi:5, pc:sliderpc[1],mm:5},
+    {name:'suny' , price:800 , mojodi:6, pc:sliderpc[2],mm:6},
+    {name:'samsung A12' , price:500 , mojodi:4, pc:sliderpc[3],mm:4},
+    {name:'samsung' , price:100 , mojodi:0, pc:sliderpc[4],mm:0},
+    {name:'xiomi pro' , price:250 , mojodi:2, pc:sliderpc[5],mm:2},
+    {name:'xiomi' , price:900 , mojodi:0, pc:sliderpc[6],mm:0},
+    {name:'apple pro u' , price:5000 , mojodi:0, pc:sliderpc[7],mm:0},
+    {name:'apple pro 7' , price:6000 , mojodi:3, pc:sliderpc[8],mm:3},
+    {name:'apple pro 10' , price:12000 , mojodi:1, pc:sliderpc[9],mm:1},
+    {name:'apple pro 11' , price:902 , mojodi:5, pc:sliderpc[10],mm:5},
+    {name:"manitor" , price:4500,mojodi:4,pc:"p14.jpg" ,mm:4}
 ]
 
-product.forEach(function(index){
+product.forEach(function(index,number,k){
+
+
+console.log(k);
 
     let div = document.createElement('div')
 div.setAttribute('id' , 'product')
@@ -67,7 +75,9 @@ h1.innerHTML="name: " +index.name
 let h2 = document.createElement('h2')
 let mojodi = document.createElement('h3')
 h2.innerHTML = "price: $"  + index.price
-div.append(img,h1,h2,mojodi)
+let button = document.createElement('button')
+button.innerHTML="add to card"
+div.append(img,h1,h2,mojodi,button)
 divAsli.appendChild(div)
 if(index.mojodi == 0){
     mojodi.innerHTML="mojodi: "+index.mojodi
@@ -76,11 +86,10 @@ mojodi.style.color="red"
 else{
     mojodi.innerHTML="mojodi: "+index.mojodi
 mojodi.style.color="green"
-let button = document.createElement('button')
-button.innerHTML="add to card"
-div.append(button)
 button.addEventListener('click' , ()=>{
     index.mojodi--
+    index.mm--
+    console.log(index.mm);
     mojodi.innerHTML="mojodi: "+index.mojodi
     if(index.mojodi == 0){
 
@@ -95,10 +104,13 @@ button.addEventListener('click' , ()=>{
     })
     if(find == true){
         cardadd.some(function(o){
-     
- 
+     if(o.name == index.name&& index.mm >-1){
         o.total++
-      
+        
+     }
+   
+   
+     
     
             
         })
@@ -106,7 +118,7 @@ button.addEventListener('click' , ()=>{
 
     }
     else{
-        let productadd ={name:index.name,price:index.price,img:index.pc ,total:1}
+        let productadd ={name:index.name,price:index.price,img:index.pc ,total:1,pp:index.mm}
     cardadd.push(productadd) 
     let divadd = document.createElement('div')
     divadd.setAttribute('id' , 'card')
@@ -117,7 +129,10 @@ button.addEventListener('click' , ()=>{
 let allprice = document.createElement('h2')
 allprice.innerHTML=index.price
 let total = document.createElement('h2')
-total.innerHTML=productadd.total
+   
+    total.innerHTML=productadd.total
+
+
     divadd.append(imgcard , namecard,allprice,total)
     ccard.append(divadd)
 
@@ -132,8 +147,13 @@ total.innerHTML=productadd.total
 }
 
 
-i += index.price
-price.innerHTML="price:$"+ i
+ 
+if(index.mm >-1){
+    i += index.price
+    price.innerHTML="price:$"+ i
+}
+
+
 if(i > 5000){
     send.innerHTML="price send: free"
     send.style.color="green"
@@ -151,3 +171,20 @@ else{
 }) 
  send.innerHTML="price send:$500"
 send.style.color="red"
+// let oof = [
+//     {off:10,code:"abcdf"},
+//     {off:10,code:"abcd43643f"},
+//     {off:10,code:"abcd347sgda5f"},
+//     {off:10,code:"abcdfsdfv"},
+//     {off:10,code:"ert"},
+// ]
+// off.addEventListener('click' , ()=>{
+// let oi = Math.random()*5;
+// oi = Math.floor(oi)
+// if(i > 0){
+//   let hg = (i*oi) / 100; 
+//   alert(hg) 
+// }
+// alert(oof[oi].off)
+
+// })

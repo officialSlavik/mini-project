@@ -8,6 +8,22 @@
 }
 
 @media screen and (max-width: 1200px) {
+  #contact {
+    margin-top: 60px;
+    background: #674646;
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    font-size: 20px;
+    font-family: "Brush Script MT", cursive;
+    border-radius: 25px;
+    box-shadow: 6px 6px 6px 6px red;
+    border: 1px solid blue;
+  }
+  #contact {
+    display: grid;
+    text-align: center;
+  }
   #menu {
     list-style: none;
     border: 0.1px solid red;
@@ -49,6 +65,14 @@
   }
 }
 @media screen and (max-width: 500px) {
+  #contact {
+    margin-top: 60px;
+    background: #674646;
+    width: 99%;
+    height: 200px;
+    font-size: 20px;
+    font-family: "Brush Script MT", cursive;
+  }
   #menu {
     display: none;
   }
@@ -145,6 +169,63 @@
   border-radius: 20px;
   margin-top: 50px;
   box-shadow: 2px 3px 5px blue, 5px 2px 3px 5px green;
+}
+
+#off {
+  border: none;
+  outline: none;
+  background: #37eae4;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#social-media {
+  display: flex;
+  margin: 200px;
+}
+
+#social-media > a {
+  margin: auto;
+  font-size: 50px;
+}
+
+#social-media > a:nth-child(1) {
+  color: #55ACEE;
+}
+
+#social-media > a:nth-child(2) {
+  color: #E1306C;
+}
+
+#social-media > a:nth-child(3) {
+  color: #55ACEE;
+}
+
+#social-media > a:nth-child(4) {
+  color: white;
+}
+
+#social-media > a:nth-child(5) {
+  color: #007bb5;
+}
+
+#social-media > a:nth-child(6) {
+  color: #55ACEE;
+}
+
+#social-media > a:hover {
+  box-shadow: 5px 6px 6px 4px #a6119f, 3px 3px 6px #4e5e82;
+  transition: 0.3s;
+}
+
+#licens {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin-top: 50px;
+  color: #d01999;
 }
 
 /*# sourceMappingURL=style.css.map */
