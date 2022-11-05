@@ -1,0 +1,24 @@
+#red {
+  background: red;
+  height: 400px;
+}
+
+#blue {
+  background: blue;
+  height: 400px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#scrool {
+  height: 10px;
+  width: 100%;
+  background: #000;
+  position: fixed;
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
