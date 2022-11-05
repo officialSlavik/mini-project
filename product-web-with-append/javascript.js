@@ -7,8 +7,10 @@ let ccard = document.getElementById('aliadd')
 let send = document.getElementById('send')
 let price = document.getElementById('price')
 let off = document.getElementById('off')
+let productfragment = document.createDocumentFragment()
 let darsad = 0 ; 
 let t = document.getElementById('t')
+let cardfragment = document.createDocumentFragment()
 let cardadd=[
 ]
 let i = 0;
@@ -78,7 +80,7 @@ h2.innerHTML = "price: $"  + index.price
 let button = document.createElement('button')
 button.innerHTML="add to card"
 div.append(img,h1,h2,mojodi,button)
-divAsli.appendChild(div)
+productfragment.append(div)
 if(index.mojodi == 0){
     mojodi.innerHTML="mojodi: "+index.mojodi
 mojodi.style.color="red"
@@ -133,17 +135,18 @@ let total = document.createElement('h2')
 
 
     divadd.append(imgcard , namecard,allprice,total)
-    ccard.append(divadd)
+    cardfragment.append(divadd)
 
-  
- setInterval(function(){
-    total.innerHTML=productadd.total
-    allprice.innerHTML=index.price * productadd.total
-
-},1)
-
-
+    
+    setInterval(function(){
+        total.innerHTML=productadd.total
+        allprice.innerHTML=index.price * productadd.total
+        
+    },1)
+    
+    
 }
+ccard.append(cardfragment)
 
 
  
@@ -200,3 +203,4 @@ darsad = oof[r]
             alert('please click click for off')
         }
     })
+    divAsli.appendChild(productfragment)
