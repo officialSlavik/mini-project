@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+        button{
+            cursor: pointer;
+            display: block;
+        }
+        div{
+            margin-top: 10px;
+            display: flex ;
+border-radius: 20px;
+justify-content: space-around;
+box-shadow: 2px 2px 2px 3px green;
+            border: 1px solid red;
+        }
+        p{
+            display: grid;
+            place-items: center;
+            margin-left: 10px;
+
+        }
+        h1{
+            display: grid;
+            place-items: center;
+        }
+        img{
+            border-radius: 20px;
+
+            width: 200px;
+            height: 200px;
+            display: inline;
+            
+        }
+    </style>
+    <button>back</button>
+    <div>
+        <img src="" alt="">
+<p></p>
+<h1></h1>
+    </div>
+</body>
+<script>
+    let back = document.querySelector('button')
+    back.addEventListener('click',()=>{
+        history.back()
+    })
+    let pc = document.querySelector('img')
+    let p = document.querySelector('p')
+    let h= document.querySelector('h1')
+    let start = location.search
+    let url = new URLSearchParams(start)
+    let end = url.get('id')
+    let prodcut = [
+    {name:'apple' , price:50,mojodi:5,id:1,tozih:'1Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple' , price:50,mojodi:5,id:2,tozih:'2Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple1' , price:90,mojodi:6,id:2,tozih:'   '},
+    {name:'apple2' , price:70,mojodi:4,id:3,tozih:'3Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple3' , price:60,mojodi:3,id:4,tozih:'4Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple4' , price:40,mojodi:7,id:5,tozih:'5Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple5' , price:30,mojodi:8,id:6,tozih:'6Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+    {name:'apple6' , price:20,mojodi:2,id:7,tozih:'7Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedit'},
+]
+let find = prodcut.find(function(index){
+    return index.id == end
+})
+if(find){
+p.innerHTML = find.tozih
+pc.setAttribute('src',"88405785.webp")
+
+h.innerHTML = find.price
+}
+else{
+    location.href = 'index.html'
+}
+</script>
+</html>
