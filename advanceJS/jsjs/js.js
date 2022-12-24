@@ -1,4 +1,5 @@
-import {log , log1} from './function/loge.js'
+import {sighnup as adduser} from './function/sighnup.js'
 
-log()
-log1()
+
+
+adduser()
